@@ -32,6 +32,8 @@ public class CategoryActivitydeux extends AppCompatActivity {
         Intent intent = getIntent();
         Client client ;
         client = (Client) intent.getSerializableExtra("client");
+        //handler de l'image des salés
+        //une fois cliquer on passe à la page où s'affiche les les femmes du service salés
         sales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +41,9 @@ public class CategoryActivitydeux extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //handler de l'image des sucrés
+        //une fois cliquer on passe à la page où s'affiche les les femmes du service sucrés
         sucres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +51,9 @@ public class CategoryActivitydeux extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //handler de l'image des pâtes
+        //une fois cliquer on passe à la page où s'affiche les les femmes du service pâtes
         pates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +74,7 @@ public class CategoryActivitydeux extends AppCompatActivity {
 
                 switch(item.getItemId())
                 {
+                    //si l'icon person est choisi on passe au profil de la femme connecté
                     case R.id.person:
                         Intent i= new Intent(getApplicationContext(), ProfileActivity.class);
                         i.putExtra("client",client);

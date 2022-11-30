@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView textView;
 
+    /*là on va faire une animation à partir de la page de bienvenue actuelle vers la page d'acceuil*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

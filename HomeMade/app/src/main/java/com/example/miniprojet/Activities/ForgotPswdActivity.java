@@ -35,11 +35,14 @@ public class ForgotPswdActivity extends AppCompatActivity {
                 String username = userNameCheck.getText().toString();
                 Boolean checkUserName= database.checkUserName(username);
                 if (checkUserName){
+                     /*si le nom complet c-à-d username existe au niveau de la table clientInfo
+                    la femme peut changer son mot de passe*/
                     Intent i = new Intent(getApplicationContext(), ResetPswdActivity.class);
                     i.putExtra("username",username);
                     startActivity(i);
                 }
                 else{
+                    /*si y'a aucune femme enregistrée avec ce nom complet 'username'*/
                     Toast.makeText(ForgotPswdActivity.this, "username non existant ", Toast.LENGTH_SHORT).show();
                 }
             }

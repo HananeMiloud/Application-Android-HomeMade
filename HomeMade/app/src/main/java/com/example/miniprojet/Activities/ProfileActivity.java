@@ -30,6 +30,8 @@ public class ProfileActivity extends AppCompatActivity {
         textViewService = findViewById(R.id.textViewService);
         textViewDescription = findViewById(R.id.textViewDescription);
         back = findViewById(R.id.back);
+
+        //handler du bouton back pour revenir à la page des catégories pour les femmes
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Client client ;
+        //Afficher les infos de la femme connectée dans les champs de cette page
         client = (Client) intent.getSerializableExtra("client");
         textViewUsername.setText(client.getUserName());
         textViewPhone.setText(client.getPhone());
@@ -49,19 +52,22 @@ public class ProfileActivity extends AppCompatActivity {
         textViewDescription.setText(client.getDescription());
 
     }
-
+    //permet de se déconnecter en se dirigeant vers la page de login
     public void logout(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
 
     }
 
+    //permet de faire des modofications sur les infos de la femme.
     public void edit(View view) {
 
         Intent intent = getIntent();
         Client client ;
         client = (Client) intent.getSerializableExtra("client");
+        //passer vers la page de modification des infos de la femme
         Intent i= new Intent(ProfileActivity.this, EditProfileActivity.class);
+        //passer les infos du client de la page ProfileActivity vers celle de modification
         i.putExtra("client",client);
         startActivity(i);
 

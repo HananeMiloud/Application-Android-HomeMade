@@ -16,9 +16,10 @@ public class PageAcceuil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_acceuil);
+        /*là on récupère mes éléments images femme HomeMade  et Client*/
         femme = findViewById(R.id.femme);
         acheteur = findViewById(R.id.client);
-
+        /*la femme va être diriger vers l'interface d'inscription || connexion */
         femme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +27,8 @@ public class PageAcceuil extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*le client ou bien acheteur de service va être dirigé directement vers la page des catégories*/
         acheteur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

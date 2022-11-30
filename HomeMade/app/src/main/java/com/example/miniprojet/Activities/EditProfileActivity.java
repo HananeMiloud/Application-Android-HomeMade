@@ -44,11 +44,12 @@ public class EditProfileActivity extends AppCompatActivity {
         updatBtn = findViewById(R.id.updatBtn);
         cancelBtn = findViewById(R.id.cancelBtn);
 
+        //handler du bouton update
         updatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                //modifier dans la table clientInfos les nouvelles infos entrées par la femme
                 dbConnector.update(username.getText().toString()
                         , phone.getText().toString()
                         , adress.getText().toString()
@@ -56,7 +57,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         , Description.getText().toString()
                 );
 
-
+                //Afficher les nouvelles valeurs saisies par la femme dans les champs correspondants
                 phone.setText(phone.getText().toString());
                 adress.setText(adress.getText().toString());
                 dropDownText.setText(dropDownText.getText().toString());
@@ -71,7 +72,8 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
 
-
+        //handler du bouton cancel
+        //annuler les modifications et revenir aux informations originales de la femme
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

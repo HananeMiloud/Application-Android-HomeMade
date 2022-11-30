@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Instance de dbHelper pour utiliser la méthode de connexion
         dbHelper= new DBHelper(this);
         dbHelper.OpenDB();
 
@@ -34,33 +35,12 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
 
-        // Initialize and assign variable
-       /* BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigationView);
 
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.person);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-           public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch(item.getItemId())
-                {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),CategoryActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.person:
-                        return true;
-
-                }
-                return false;
-            }
-        });*/
-
-
+        //handler du bouton de connexion
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //si la femme existe déjà y'aura une femme dans la liste et userDetails.size() !=0
                 ArrayList<Client> userDetails = dbHelper.LoginClient(username.getText().toString(),password.getText().toString());
                 if(userDetails.size() !=0){
                     Client client = userDetails.get(0);
@@ -71,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
                 else{
-
+                    //y'a aucune femme dans la table clientInfo avec le mot de passe et le username passé en param
                     Toast.makeText(getApplicationContext(),"invalide user",Toast.LENGTH_LONG).show();
 
                 }
@@ -81,13 +61,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-
+    //redirection vers la page d'incription
     public void Register(View view){
         Intent intent= new Intent(LoginActivity.this, RegistrationActivity.class);
         startActivity(intent);
 
     }
-
+    //redirection vers la page de changement du mot de passe si oublié
     public void motdpOublie(View view){
         Intent intent= new Intent(LoginActivity.this, ForgotPswdActivity.class);
         startActivity(intent);

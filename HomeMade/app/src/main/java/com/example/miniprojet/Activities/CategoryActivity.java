@@ -21,6 +21,8 @@ public class CategoryActivity extends AppCompatActivity {
         sales = findViewById(R.id.sales);
         sucres = findViewById(R.id.sucres);
         pates = findViewById(R.id.pates);
+        //handler de l'image des salés
+        //une fois cliquer on passe à la page où s'affiche les les femmes du service salés
         sales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +30,9 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //handler de l'image des sucrés
+        //une fois cliquer on passe à la page où s'affiche les les femmes du service sucrés
         sucres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +40,9 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //handler de l'image des pâtes
+        //une fois cliquer on passe à la page où s'affiche les les femmes du service pâtes
         pates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

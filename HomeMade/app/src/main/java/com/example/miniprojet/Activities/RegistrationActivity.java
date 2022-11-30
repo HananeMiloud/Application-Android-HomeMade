@@ -45,7 +45,7 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
+        //récupérer tous les champs d'inscription pour qu'on puisse récupérer les valeurs saisies
         dbHelper = new DBHelper(this);
         dbHelper.OpenDB();
         profileImage = findViewById(R.id.profile);
@@ -59,6 +59,8 @@ public class RegistrationActivity extends AppCompatActivity {
         textInputLayout = findViewById(R.id.services);
         dropDownText = findViewById(R.id.dropdown_text);
 
+
+        //Liste de sélection de la catégorie
         String[] items = new String[]{
                 "salés",
                 "sucrés",
@@ -71,7 +73,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 items
         );
         dropDownText.setAdapter(adapter);
-
+        //Handler du choix de l'image
         profileImage.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View view) {
@@ -93,6 +95,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
                         else {
+                            //récuperer tous les valeurs saisies et faire l'inscription avec RegistrationCient de dbHelper
                             Client client = new Client(username.getText().toString(), password.getText().toString(), phone.getText().toString(), adress.getText().toString(), dropDownText.getText().toString(), ((BitmapDrawable)profileImage.getDrawable()).getBitmap(), Description.getText().toString());
                             if (dbHelper.RegistrationClient(client)) {
 
@@ -110,7 +113,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                 });
     }
-
+    //permet de choisir une image à partir de la galorie
     private void choseImage() {
         try {
             Intent intent = new Intent();
@@ -122,7 +125,7 @@ public class RegistrationActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
         }
     }
-
+    //passer de la page actuelle d'inscription vers celle de connexion
     public void login(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
