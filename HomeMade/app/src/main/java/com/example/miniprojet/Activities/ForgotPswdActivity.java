@@ -26,9 +26,7 @@ public class ForgotPswdActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_pswd);
         userNameCheck = findViewById(R.id.username);
         valide = findViewById(R.id.valide);
-
         database = new DBConnector(this);
-
         valide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

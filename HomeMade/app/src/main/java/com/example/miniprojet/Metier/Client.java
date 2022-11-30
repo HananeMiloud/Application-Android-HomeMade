@@ -14,7 +14,6 @@ public class Client implements Serializable {
     private String Description;
     private Integer Id;
 
-
     public Client(String userName, String password, String phone, String adress,String service, Bitmap image, String description) {
         UserName = userName;
         Password = password;

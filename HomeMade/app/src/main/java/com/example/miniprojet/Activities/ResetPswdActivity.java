@@ -39,6 +39,7 @@ public class ResetPswdActivity extends AppCompatActivity {
                 String password= ResetPswdActivity.this.password.getText().toString();
                 String rePassword = confrPassword.getText().toString();
                 //est ce que le mot de passe et celui de confirmation se match ou non
+
                 if (password.equals(rePassword)){
                     //modification dans bdd avec le nouveau password
                     Boolean checkPasswordUpdate= database.updatePasswd(Username,password);

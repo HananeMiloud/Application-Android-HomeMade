@@ -29,9 +29,7 @@ public class SugarRecyclerActivity extends AppCompatActivity {
 
         femmesList=myDB.readAllSUGARData();
         setClientItemRecycler(femmesList);
-
-
-
+        
     }
 
 

@@ -113,6 +113,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                 });
     }
+
     //permet de choisir une image à partir de la galorie
     private void choseImage() {
         try {

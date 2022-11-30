@@ -26,6 +26,7 @@ public class DBConnector extends SQLiteOpenHelper {
                 "Description VARCHAR(255))");
     }
 
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1){
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS clientInfo");

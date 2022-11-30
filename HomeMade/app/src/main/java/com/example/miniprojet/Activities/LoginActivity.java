@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
     }
     //redirection vers la page d'incription
     public void Register(View view){

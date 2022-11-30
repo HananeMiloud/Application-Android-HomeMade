@@ -30,8 +30,6 @@ public class SaltRecyclerActivity extends AppCompatActivity {
         femmesList=myDB.readAllSALTData();
         setClientItemRecycler(femmesList);
 
-
-
     }
 
 

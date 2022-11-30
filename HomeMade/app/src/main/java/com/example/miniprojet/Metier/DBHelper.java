@@ -26,6 +26,7 @@ public class DBHelper {
         return this ;
     }
 
+
     public boolean RegistrationClient(Client client){
         try {
             Bitmap profileImage=client.getImage();

@@ -64,7 +64,6 @@ public class CategoryActivitydeux extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNavigation);
-
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.home);
 

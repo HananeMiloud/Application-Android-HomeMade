@@ -28,6 +28,7 @@ public class PageAcceuil extends AppCompatActivity {
             }
         });
 
+
         /*le client ou bien acheteur de service va être dirigé directement vers la page des catégories*/
         acheteur.setOnClickListener(new View.OnClickListener() {
             @Override

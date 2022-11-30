@@ -31,6 +31,7 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
 
+
         //handler de l'image des sucrés
         //une fois cliquer on passe à la page où s'affiche les les femmes du service sucrés
         sucres.setOnClickListener(new View.OnClickListener() {

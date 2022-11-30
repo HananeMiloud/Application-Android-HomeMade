@@ -34,6 +34,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     }
 
+
     //permet de passer la liste des femmes qui seront dans la recyclerView
     private void setClientItemRecycler(List<Client> femmesList) {
         recyclerView = findViewById(R.id.recyclerView);

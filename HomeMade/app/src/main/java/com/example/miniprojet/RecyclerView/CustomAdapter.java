@@ -30,6 +30,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ClientView
         return new ClientViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull final ClientViewHolder holder, int position) {
         Client client=femmesList.get(position);

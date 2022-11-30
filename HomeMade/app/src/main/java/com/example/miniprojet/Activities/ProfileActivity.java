@@ -59,6 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+
     //permet de faire des modofications sur les infos de la femme.
     public void edit(View view) {
 

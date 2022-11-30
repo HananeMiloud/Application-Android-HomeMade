@@ -71,7 +71,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
         });
 
-
         //handler du bouton cancel
         //annuler les modifications et revenir aux informations originales de la femme
         cancelBtn.setOnClickListener(new View.OnClickListener() {
